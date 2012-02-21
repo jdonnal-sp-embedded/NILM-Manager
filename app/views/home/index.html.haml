@@ -1,0 +1,11 @@
+#tabs
+  %ul
+    %li= link_to 'Overview', '#tabs1'
+    %li= link_to 'How it Works', '#tabs2'
+  #tabs1
+    =render(:partial => 'plot_panel')
+  #tabs2
+    How it works
+    %input#date{:type=>'text',:name=>'date'}
+
+-# content_for :sidebar, render(:partial => 'sidebar')
