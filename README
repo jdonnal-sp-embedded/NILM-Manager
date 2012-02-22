@@ -17,11 +17,11 @@ rvm requirements
 ##install all the packages listed
 rvm install 1.9.3-p0
 rvm --default use 1.9.3-p0
+git clone ...
 bundle install
 sudo mkdir -p /data/db/
 sudo chown `id -u` /data/db
-git clone ...
-
+passenger-install-apache2-module
 
 -------
 Deploy Notes

@@ -49,8 +49,8 @@ Website::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
    root :to => 'home#index'
-   resources :plots, :only =>[:create, :destroy, :new]
-   match 'plots/:year/:month/:day/:hour/:phase.:format'=> 'plots#show'
+   resources :plots, :only =>[:create, :destroy, :new, :index]
+   #match 'plots', :as=>:show_plot
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
