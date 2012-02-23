@@ -3,4 +3,4 @@
   =button_tag 'Remove Plot', :class=>'delete-plot'
 .plot-body
   .h2= @plot_data["start_time"] + "-" + @plot_data["end_time"]
-  %img{:src=>@plot_data["image_url"], :alt=>"Plot of P and Q!"}
+  =image_tag(@plot_data["image_url"], :alt=>"Plot of P and Q!")
