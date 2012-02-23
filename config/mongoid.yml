@@ -1,6 +1,6 @@
 development:
   host: localhost
-  database: sharon_development
+  database: nilm
 
 test:
   host: localhost
