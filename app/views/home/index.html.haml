@@ -18,7 +18,7 @@
   });
   function setupUI(){
     $('#tabs').tabs();
-    $('.date').datepicker({defaultDate: null});
+    $('.date').datepicker({defaultDate: null, minDate: new Date(2012, 1, 26, 0, 0, 0, 0), maxDate: 0 });
     $('.plot').addClass('ui-widget ui-widget-content ui-corner-all');
     $('.plot-header').addClass('ui-widget-header ui-dialog-titlebar ui-corner-all ui-helper-reset ui-helper-clearfix');
    $('.delete-plot').addClass('close-button');
