@@ -2,5 +2,5 @@
   .plot-title= ("Phase "+@plot_data["phase"]+"&mdash;"+@plot_data["date"]).html_safe
   =button_tag 'Remove Plot', :class=>'delete-plot'
 .plot-body-filled
-  .h2= @plot_data["start_time"] + "-" + @plot_data["end_time"]
+  -#.h2= @plot_data["start_time"] + "-" + @plot_data["end_time"]
   =image_tag(@plot_data["image_url"], :alt=>"Plot of P and Q!")
