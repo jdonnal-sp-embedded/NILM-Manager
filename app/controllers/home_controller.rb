@@ -14,6 +14,6 @@ class HomeController < ApplicationController
     @plot_data=Hash.new()
     @plot_data["date"]=data.start_at.in_time_zone.strftime("%D")
     @plot_data["phase"]='1'
-    @plot_data["image_url"]=data.basename+'prep1.png'
+    @plot_data["image_url"]=data.basename+'.prep1.png'
   end
 end
