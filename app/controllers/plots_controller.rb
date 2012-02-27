@@ -1,5 +1,7 @@
 class PlotsController < ApplicationController
   layout nil
+  respond_to :html, :json, :xml
+
   def destroy
     
   end
@@ -10,14 +12,12 @@ class PlotsController < ApplicationController
     
   end
   def index
+    
     start_time=Time.parse("#{params[:year]}-#{params[:month]}-#{params[:date]} #{params[:hour]}:00")
    
     data=DataChunk.where(:start_at => start_time).first
-    puts "####"
-    puts data
-    puts "###"
+   
     unless data
-      render :text=>"no data"
       return
     end
     image_ext='error'
@@ -36,8 +36,6 @@ class PlotsController < ApplicationController
     @plot_data["date"]=data.start_at.in_time_zone.strftime("%D")
     @plot_data["phase"]=params[:phase]
     @plot_data["image_url"]=data.basename+image_ext
-    @plot_data["phase"]+@plot_data["date"]
-    @plot_data["start_time"]=data.start_at.in_time_zone.strftime("%H:%M")
-    @plot_data["end_time"]=data.end_at.in_time_zone.strftime("%H:%M")
+    
   end
 end

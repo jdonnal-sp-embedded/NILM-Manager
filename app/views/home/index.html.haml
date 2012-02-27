@@ -36,7 +36,7 @@
     $("#plots").append('<div id=\'p'+nextPlotPaneID+'\' class=\'plot\'/>');
     $('#p'+nextPlotPaneID).html(data).hide();
     $('#p'+nextPlotPaneID+'>.plot-header>.delete-plot').click(deletePlotPane);
-    $('#p'+nextPlotPaneID+'>.plot-body>.create-plot').click(requestPlot);
+    $('#p'+nextPlotPaneID+'>.plot-calendar>.create-plot').click(requestPlot);
     setupUI();
     $('#p'+nextPlotPaneID).slideDown();
     nextPlotPaneID=nextPlotPaneID+1;
@@ -52,10 +52,10 @@
     event = event || window.event;
     src = event.target || event.srcElement;
     paneID=src.parentNode.parentNode.getAttribute('id');
-    date=$('#'+paneID+'>.plot-body>.date').datepicker("getDate");
-    hour=$('#'+paneID+'>.plot-body>#date_hour')[0].selectedIndex;
-    phase=$('#'+paneID+'>.plot-body>#phase_id')[0].selectedIndex+1;
-    requestURL="#{plots_path(:format=>'html')}?year="+date.getFullYear()+
+    date=$('#'+paneID+'>.plot-calendar>.date').datepicker("getDate");
+    hour=$('#'+paneID+'>.plot-calendar>#date_hour')[0].selectedIndex;
+    phase=$('#'+paneID+'>.plot-calendar>#phase_id')[0].selectedIndex+1;
+    requestURL="#{plots_path(:format=>'json')}?year="+date.getFullYear()+
                 "&month="+(date.getMonth()+1)+
                 "&date="+date.getDate()+
                 "&hour="+hour+
@@ -63,11 +63,14 @@
     $.get(requestURL, function(data){insertPlot(data,paneID);});
   }
   function insertPlot(data,paneID){
-    if(data=="no data"){
-      alert("No Data Available For This Date and Time");
+    obj=JSON.parse(data);
+    if(obj.status!="ok"){
+      alert(obj.status);
       return;
       }
-    $('#'+paneID).html(data);
+    
+    $('#'+paneID+'>.plot-body').html('<img class=\'image\' src='+obj.image_url+' alt=\'P and Q Plot\'/>');
+    $('#'+paneID+'>.plot-header>.plot-title').html(obj.date+'&mdash; Phase '+obj.phase);
     $('#'+paneID+ '>.plot-header>.delete-plot').click(deletePlotPane);
      setupUI();
   }

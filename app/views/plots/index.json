@@ -1,0 +1,10 @@
+{
+	<%if @plot_data%>
+	"status": "ok",
+	"date": "<%=@plot_data['date']%>",
+	"phase": "<%=@plot_data['phase']%>",
+	"image_url": "<%="http://bucket.mit.edu/cottage/assets/" + @plot_data['image_url']%>"
+	<%else%>
+	"status": "No Data Is Available For This Time"
+	<%end%>
+}
