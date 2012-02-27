@@ -3,7 +3,7 @@
   =button_tag 'Remove Plot', :class=>'delete-plot'
 .plot-body
   .date
-  =select_hour(Time.now, :ampm=>true, :class=>'hour')
+  =select_hour(Time.now-2.hours, :ampm=>true, :class=>'hour')
   =select("phase","id",{"Phase 1"=> "1", "Phase 2"=>"2", "Phase 3"=> "3"})
   =button_tag "Create Plot", :class=>'create-plot'
     
