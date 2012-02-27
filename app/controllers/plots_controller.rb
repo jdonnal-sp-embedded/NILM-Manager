@@ -35,7 +35,7 @@ class PlotsController < ApplicationController
     @plot_data=Hash.new()
     @plot_data["date"]=data.start_at.in_time_zone.strftime("%D")
     @plot_data["phase"]=params[:phase]
-    @plot_data["image_url"]=data.archive+image_ext
+    @plot_data["image_url"]=data.basename+image_ext
     @plot_data["phase"]+@plot_data["date"]
     @plot_data["start_time"]=data.start_at.in_time_zone.strftime("%H:%M")
     @plot_data["end_time"]=data.end_at.in_time_zone.strftime("%H:%M")
