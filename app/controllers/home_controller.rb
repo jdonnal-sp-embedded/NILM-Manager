@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   def index
 
     
-    start_time=Time.parse("#{Time.now.year}-#{Time.now.month}-#{Time.now.day} #{Time.now.hour-2}:00")
+    time=2.hours.ago
+    start_time=Time.parse("#{time.year}-#{time.month}-#{time.day} #{time.hour}:00")
    
     data=DataChunk.where(:start_at => start_time).first
    

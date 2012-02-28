@@ -1,0 +1,74 @@
+:markdown
+
+  Energy and Buildings
+  ====================
+  
+  Buildings in the U.S. consume over 70% of the electricity used nationally.  Efforts to improve the efficiency of appliances, HVAC equipment, lights and office equipment are important and have been effective, but do not address equipment operation and do not address inevitable losses due to remaining inefficiencies.   For example, even highly efficient fluorescent lamp ballasts currently on the market generate 2-6 watts of waste heat per ballast, depending on type and configuration.  A 2003 LBNL study indicated that nearly 3 billion products that contain power supplies are in use in the United States, and these numbers will grow.  These products account for tens or hundreds of millions of dollars of waste electrical power, both due to inefficiency, e.g., in the lamp ballast, and due to poor operating scheduling, e.g., battery chargers left plugged in but idling or not charging a battery.
+  
+  At any point in the life of a building, mechanical and electrical equipment – the services infrastructure – may be poorly operated.  Equipment may be inadvertently left in operation when not needed: lights and fans running all night or air conditioning in unoccupied spaces.  Or equipment may be operated in ignorance of the cost, a problem exacerbated by time-varying electrical rates.  Further, as buildings age, both the equipment and the building façade or envelope – a part of the construction infrastructure – wear, cease to function properly, and eventually fail, via myriad processes that are often undetected.  Valves do not close fully, dampers stick, refrigerant leaks, heating and cooling coils – from the smallest refrigerator to the largest building air-conditioning system – become fouled with accumulated dirt and debris, and belts slip.  
+  
+  Facilities managers for industrial and commercial sites want to develop detailed consumption profiles for utility services like electricity, water, and gas consumed in their buildings.  This information is essential in order to understand and optimize energy consumption, to detect and solve equipment failures and problems, and to facilitate predictive maintenance of various utility loads.  As electrical, gas, and water costs rise, residential customers are also developing a growing interest in understanding the magnitude and impact of their consumption quickly, easily, and informatively.
+  Conventional sub-metering of utility services to detect problems and conduct energy and consumption score-keeping has long been costly and inconvenient. For electrical consumption, for example, a nagging problem for over two decades has been that these costs increase swiftly as data requirements become increasingly complex:
+  
+  > ... the high cost of equipment continues to limit the amount of [usage] data utilities can collect. Additional drawbacks of the equipment now available for collection of end-use load survey data range from their cost, reliability, and flexibility to intrusion into the customer's activities and premises [1].
+   
+  The U.S. Department of Energy has identified “sensing and measurement” as one of the “five fundamental technologies” essential for driving the creation of a “Smart Grid” [2]. Consumers will need “simple, accessible. . . , rich, useful information” to help manage their electrical consumption without interference in their lives [2]. Both vendors and consumers will likely find innumerable ways to mine information if it is made available in a useful form. However, appropriate sensing and information delivery systems remain a chief bottleneck for many applications, and metering hardware and access to metered information will likely limit the implementation of new electric energy conservation strategies in the near future. 
+  We are developing new nonintrusive systems for diagnostic and prognostic electromechanical system monitoring and for determining energy consumption. These systems are relatively cheap to install.  They give good information about how energy is being consumed in a building, and what loads are using electrical power at any instant in time. 
+  
+  Nonintrusive Load Monitoring (NILM) 
+  ------------------------------------
+  The  non-intrusive load monitor (NILM) for electrical consumption has been developed at MIT (see Figure 1).  The system makes measurements of voltage and current solely at the utility service entry.  It characterizes individual loads by their unique signatures of power drawn from the mains.  A transient detection algorithm can identify when each load turns on and off, even when several do so nearly simultaneously.  
+  
+  The  non-intrusive load monitor (NILM) for electrical consumption has been developed at MIT (see below).  The system makes measurements of voltage and current solely at the utility service entry.  It characterizes individual loads by their unique signatures of power drawn from the mains.  A transient detection algorithm can identify when each load turns on and off, even when several do so nearly simultaneously.  
+
+  ![Diagram of NILM Setup](#{path_to_image('NILM_diagram.png')} "Diagram of NILM Setup")
+
+  The transient behavior of a typical electrical load is strongly influenced by the physical task that the load performs. For example, Figure 2 shows the real power, 5th, and 7th harmonic content demanded by a variable-speed fan drive.  This drive operated with a full power electronic interface under active control, and is representative of the type of systems used in industrial process control.  The drive begins with an “open loop” spin-up to operating speed during the first 40 seconds of operation.  From 100 seconds on, the drive is operating under closed-loop control as it attempts to regulate the pressure in a distant duct by varying fan speed.  These transient shapes are indicative of the state and operating parameters of the electromechanical and electronic subsystems in the drive, and can be used as diagnostic indicators.   For example, the figure below illustrates the steady-state oscillations in nominal operation (after 100 seconds) that result from a poorly-tuned control loop.  These oscillations are relatively slow and easily missed by a casual inspection of the VSD control panel, but are easily detected by the NILM with transient event detection.  
+  
+  ![Load Signature](#{path_to_image('NILM_transient.png')} "Unique Load Signature")
+
+  The unique signatures presented by different classes of loads create an opportunity for diagnostic monitoring.  These signatures can be used as fingerprints to identify the operation of individual loads from an aggregate current stream.  Once it becomes possible to associate observed waveforms or segments with specific loads, it is possible to track and trend diagnostic parameters for individual loads.
+
+  Power Monitoring at the Cottage Street School
+  ---------------------------------------------
+  We partnered with Cottage Street School to install a NILM device in their boiler room. Show below is the panel with the NILM device attached. 
+  
+  ![NILM Install](#{path_to_image('NILM_install.jpg')} "NILM Install at Cottage Street School")
+  
+  The NILM box reads current and voltage information with sweet analog circuitry. 
+  
+  ![NILM Closeup](#{path_to_image('NILM_closeup.jpg')} "NILM Circuitry")
+  
+  After a few hours the installation was complete
+  
+  ![NILM Complete](#{path_to_image('NILM_Complete.jpg')} "NILM Installation Complete!")
+  
+  
+  Applications and the Future
+  ----------------------------
+  
+  We have implemented all of these analytical enhancements for nonintrusive monitoring on an inexpensive computer platform for use in the field. A suite of NILM tools, including sophisticated model-based diagnostic algorithms that track (and could in principle trend) model parameters to determine the health of critical loads, has been developed under the Linux operating system environment. All of these software tools run on a  desktop personal computer  with an ethernet data-acquisition card; any relatively inexpensive personal computer, laptop, or embedded system like a PC104 chassis could be used to develop a modern monitor that performs transient event detection. We have used all of these platforms with success in buildings and transportation systems. Current experiments in the field are aimed at enhancing the diagnostic capabilities of the monitor, integrating it into building energy management and control systems, and improving it as a load monitor for conducting surveys and energy-usage scorekeeping. Even in very modern buildings with sophisticated control and consumption metering systems, we have found that the monitor is invaluable to sophisticated facilities managers. As the monitor requires virtually no additional wiring effort and few installed sensors, it provides invaluable building operating history and health information in a package that is both easy to install and highly reliable.
+  
+  In the future, we will use this site to test new event detection and classification schemes in which load disaggregation and usage tracking are increasingly accurate. The best approaches appear to blend different mathematical analysis tools.  We are currently developing new detectors that use many different approaches to identify events with the highest possible accuracy and precision.
+
+
+  References and Further Reading
+  --------------------------
+  1.    R.E. Abbot and S.C. Hadden, EPRI Final Report CU-6623, December 1989, “Requirements for an Advanced Utility Load Monitoring System.”
+  2.   “The Smart Grid: An Introduction,” U. S. Department of Energy, http://www.oe.energy. gov/1165. htm, August 2009.
+  3.   U.S. Patent Num¬ber 5,483,153, S.B. Leeb, et.al., Transient Event Detector for use in Nonintrusive Load Monitoring Systems.
+  4.   Multiprocessing Transient Event Detector for Use in a Nonintrusive Electrical Load Monitoring System, S.B. Leeb, et.al., U.S. Patent Number 5,717,325. 
+  5.   Shaw, S.R., S.B. Leeb, L.K. Norford, R.W. Cox, “Nonintrusive Load Monitoring and Diagnostics in Power Systems,” IEEE Transactions on Instrumentation and Measurement, Volume 57, No. 7, July 2008, pp. 1445-1454. 
+  6.    S. B. Leeb, S. R. Shaw, and J. L. Kirtley, “Transient event detection in spectral envelope estimates for nonintrusive load monitoring,” IEEE Trans. Power Del. vol. 7, no. 3, pp. 1200-1210, Jul. 1995.
+  7.   Khan, U. A. , S. B. Leeb, M. C. Lee, “A Multiprocessor for Transient Event Detection,” IEEE Transactions on Power Delivery, Volume 12, Number 1, pp. 51-60, January 1997.
+  8.    S. R. Shaw, C. B. Abler, R. F. Lepard, D. Luo, S. B. Leeb, and L. K. Norford, “Instrumentation for high performance nonintrusive electrical load monitoring,” Trans. ASME J. Sol. Energy Eng. , vol. 120, no. 3, pp. 224-229, Aug. 1998.
+  9.   S. R. Shaw, “System identification techniques and modeling for nonintrusive load diagnostics,” Ph. D. dissertation, Massachusetts Institute of Technology,     Cambridge, MA, Feb. 2000.
+  10.  Laughman, C. R., “Fault Detection Methods for Vapor-Compression Air Conditioners Using Electrical Measurements,” MIT BT Ph. D. thesis, September 2008.
+  11.   Laughman, C.R., Leeb, S.B., Norford, L.K., Shaw, S.R., Armstrong, P.R., “A Two-Step Method for Estimating the Parameters of Induction Machine Models,” IEEE Energy Conversion Conference and Exposition, San Jose, CA, September 2009. 
+  12.  J. Paris, et al. “Scalability of Non-Intrusive Load Monitoring for Shipboard Applications,” ASNE Day 2009, National Harbor, Maryland, April, 2009.
+  13.  A. P. Dempster, N. M. Laird, D. B. Rubin, “Maximum Likelihood from Incomplete Data via the EM Algorithm,” Journal of the Royal Statistical Society, Series B 39:1-38, 1977. 
+  14.  U.S. Patent 5,212,441, “Harmonic-Adjusted Power Factor Meter,” May 18, 1993.
+  15.  U.S.Patent 5,229,713, “Method for Determining Electrical Energy Consumption,” July 20, 1993.
+  16.  U.S. Patent 5,548,527, “Programmable Electrical Energy Meter Utilizing a Non-Volatile Memory,” August 20, 1996.
+  17.  U.S. Patent 6,615,147, “Revenue Meter with Power Quality Features,” September 2, 2003.
+  18.  U.S. Patent 7,525,423, “Automated Meter Reading Communication System and Method,” April 28, 2009.
