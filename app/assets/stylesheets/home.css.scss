@@ -31,6 +31,9 @@
 }
 .plot-body:after{
   clear:both;
+  content: "";
+  display: block;
+  
 }
 .plot-body{
   position:relative;
