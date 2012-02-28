@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+#header h1{
+  white-space: nowrap;
+}
+.ui-widget-content{
+  background: white;
+}
 .plot-title{
   float: left;
   margin: 0.1em 16px 0.1em 15px;
@@ -20,7 +27,7 @@
 .plot-image{
   margin-left: 20em;
   max-width: 100%;
-  min-width: 40em;
+  min-width: 20em;
 }
 .plot-body:after{
   clear:both;
