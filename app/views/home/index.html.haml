@@ -69,7 +69,7 @@
       return;
       }
     
-    $('#'+paneID+'>.plot-body').html('<img class=\'image\' src='+obj.image_url+' alt=\'P and Q Plot\'/>');
+    $('#'+paneID+'>.plot-body').html('<img src='+obj.image_url+' alt=\'P and Q Plot\'/>');
     $('#'+paneID+'>.plot-header>.plot-title').html(obj.date+'&mdash; Phase '+obj.phase);
     $('#'+paneID+ '>.plot-header>.delete-plot').click(deletePlotPane);
      setupUI();

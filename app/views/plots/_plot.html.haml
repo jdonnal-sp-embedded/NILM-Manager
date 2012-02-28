@@ -7,4 +7,4 @@
   =select("phase","id",{"Phase 1"=> "1", "Phase 2"=>"2", "Phase 3"=> "3"})
   =button_tag "Create Plot", :class=>'create-plot'  
 .plot-body
-  =image_tag(@plot_data["image_url"], :alt=>"Plot of P and Q!")
+  %img{:src=>"http://bucket.mit.edu/cottage/assets/"+@plot_data["image_url"], :alt=>"Plot of P and Q!"}
