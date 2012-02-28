@@ -1,10 +1,11 @@
 .plot-header
   .plot-title= (@plot_data["date"]+"&mdash;"+"Phase "+@plot_data["phase"]).html_safe
   =button_tag 'Remove Plot', :class=>'delete-plot'
-.plot-calendar
-  .date
-  =select_hour(Time.now-2.hours, :ampm=>true, :class=>'hour')
-  =select("phase","id",{"Phase 1"=> "1", "Phase 2"=>"2", "Phase 3"=> "3"})
-  =button_tag "Create Plot", :class=>'create-plot'  
 .plot-body
-  %img{:src=>"http://bucket.mit.edu/cottage/assets/"+@plot_data["image_url"], :alt=>"Plot of P and Q!"}
+  .plot-calendar
+    .date
+    =select_hour(Time.now-2.hours, :ampm=>true, :class=>'hour')
+    =select("phase","id",{"Phase 1"=> "1", "Phase 2"=>"2", "Phase 3"=> "3"})
+    =button_tag "Create Plot", :class=>'create-plot'  
+  .plot-image
+    %img{:src=>"http://bucket.mit.edu/cottage/assets/"+@plot_data["image_url"], :alt=>"Plot of P and Q!"}

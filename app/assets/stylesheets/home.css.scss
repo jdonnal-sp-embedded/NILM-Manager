@@ -13,15 +13,27 @@
   float: right;
 }
 .plot-calendar{
+  width: 18em;
+  margin: 1em;
   float: left;
-  margin: 3% 50px 30% 20px;
+}
+.plot-image{
+  margin-left: 20em;
+  max-width: 100%;
+  min-width: 40em;
+}
+.plot-body:after{
+  clear:both;
 }
 .plot-body{
- max-width: 100%
-}
-.image{
-  max-width: 100%
+  position:relative;
 }
 .plot{
   width: 100%;
+}
+.plot-image img{
+  max-width: 100%;
+}
+body #container{
+  min-width: 640px;
 }
