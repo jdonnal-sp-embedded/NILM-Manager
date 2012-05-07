@@ -45,7 +45,7 @@
   function deletePlotPane(event){
     event = event || window.event;
     src = event.target || event.srcElement;
-    paneID=src.parentNode.parentNode.getAttribute('id');
+    paneID=$(src).parents('.plot').attr('id');
     $('#'+paneID).slideUp();
   }
   function requestPlot(event){
