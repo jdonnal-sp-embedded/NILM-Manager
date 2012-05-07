@@ -51,7 +51,7 @@
   function requestPlot(event){
     event = event || window.event;
     src = event.target || event.srcElement;
-    paneID=src.parentNode.parentNode.parentNode.getAttribute('id');
+    paneID=$(src).parents('.plot').attr('id');
     date=$('#'+paneID+'>.plot-body>.plot-calendar>.date').datepicker("getDate");
     hour=$('#'+paneID+'>.plot-body>.plot-calendar>#date_hour')[0].selectedIndex;
     phase=$('#'+paneID+'>.plot-body>.plot-calendar>#phase_id')[0].selectedIndex+1;
