@@ -35,6 +35,9 @@
   display: block;
   
 }
+img{
+  -ms-interpolation-mode: bicubic;
+}
 .plot-body{
   position:relative;
 }
